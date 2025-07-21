@@ -1,11 +1,10 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
 namespace Game
 {
-	public class Homepage : MonoBehaviour
+	public class Homepage : Page
 	{
 		#region Editor Fields
 
@@ -16,12 +15,21 @@ namespace Game
 		[SerializeField] private Button _sendButton;
 		[SerializeField] private Button _receiveButton;
 
+		[SerializeField] private Button _testPageButton;
+
 		#endregion
 
 		#region Fields
 
 		private string _name;
 		private int _score;
+
+		#endregion
+
+		#region Properties
+
+		public override string ID => HomePageId;
+		public const string HomePageId = "HOMEPAGE";
 
 		#endregion
 
@@ -35,6 +43,8 @@ namespace Game
 			_nameInput.onValueChanged.AddListener(UpdateName);
 			_scoreTestInput.onValueChanged.AddListener(UpdateScore);
 			SetEnabled(false);
+
+			_testPageButton.onClick.AddListener(() => PageHandler.Instance.ToPage("TESTPAGE_1"));
 		}
 
 		private void Login()
