@@ -9,6 +9,7 @@ namespace Game
 		[SerializeField] private TextMeshProUGUI _storyText;
 		[SerializeField] private GameObject _puzzle1Panel, _puzzle2Panel, _puzzle3Panel;
 		[SerializeField] private Button _nextPuzzleButton;
+		[SerializeField] private Typewriter _typewriter;
 
 		private int _puzzleIndex = 0;
 
@@ -21,11 +22,11 @@ namespace Game
 		private void ShowStoryIntro()
 		{
 			string intro = $"Welcome {EscapeRoomGameManager.Instance.PlayerName}!\n" +
-			               $"Difficulty: {EscapeRoomGameManager.Instance.Difficulty}\n" +
-			               "You awaken in a mysterious room filled with ancient artifacts and cryptic symbols. " +
+			               $"Difficulty: {EscapeRoomGameManager.Instance.Difficulty}.\n" +
+			               "You awaken in a mysterious room filled with ancient artifacts and cryptic symbols." +
 			               "Your goal: Solve the puzzles and escape before time runs out!\n\n" +
-			               "A note reads: 'Only those who understand the lore of the room can escape.'";
-			_storyText.text = intro;
+			               "A note reads: 'Only those who understand the lore of the room can escape'.";
+			_typewriter.InitializeText(intro);
 			_puzzle1Panel.SetActive(false);
 			_puzzle2Panel.SetActive(false);
 			_puzzle3Panel.SetActive(false);
