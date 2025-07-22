@@ -36,6 +36,7 @@ public class PlayfabManager : MonoBehaviour
 
 	#region Properties
 
+	public static string CurrentLoggedInUser => _currentLoggedInUser;
 	public static bool IsLoggedIn => string.IsNullOrEmpty(_currentLoggedInUser) == false;
 
 	#endregion

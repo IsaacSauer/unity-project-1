@@ -6,8 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Boot.unity
+    guid: 9227f0c1986e207498dda5cf2190f772
+  - enabled: 1
+    path: Assets/Scenes/StartScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/DifficultySelectScene.unity
+    guid: 889c12d7458155c4c8f9f8a58838df60
+  - enabled: 1
+    path: Assets/Scenes/EscapeRoomScene.unity
+    guid: afead602f26c5a34d8f1b94c382924fa
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 5ae1e7cbe3bbf3ea3b4efc19c39586f9, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
