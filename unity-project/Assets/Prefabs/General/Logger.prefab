@@ -149,5 +149,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f19efcae14f80279595424b3f8a4d257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loggerText: {fileID: 3706395503645328705}
-  maxMessages: 20
+  _loggerText: {fileID: 3706395503645328705}
+  _maxMessages: 20
