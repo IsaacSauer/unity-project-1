@@ -7,6 +7,7 @@ namespace Game
 {
 	public class NameEntryUI : MonoBehaviour
 	{
+		[SerializeField] private SceneReference _difficultyScene;
 		[SerializeField] private TMP_InputField _nameInput;
 		[SerializeField] private Button _continueButton;
 
@@ -27,7 +28,7 @@ namespace Game
 					_nameInput.gameObject.SetActive(false);
 
 					EscapeRoomGameManager.Instance.SetPlayerName(playerName);
-					SceneManager.LoadScene("DifficultySelectScene");
+					SceneManager.LoadScene(_difficultyScene.SceneName);
 				});
 			}
 		}

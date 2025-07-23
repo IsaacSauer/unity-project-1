@@ -11,6 +11,8 @@ namespace Game
 
 	public class EscapeRoomGameManager : Singleton<EscapeRoomGameManager>
 	{
+		[SerializeField] private SceneReference _introductionScene;
+		
 		public string PlayerName { get; private set; }
 		public DifficultyLevel Difficulty { get; private set; }
 
@@ -26,7 +28,7 @@ namespace Game
 
 		public void StartGame()
 		{
-			SceneManager.LoadScene("EscapeRoomScene");
+			SceneManager.LoadScene(_introductionScene.SceneName);
 		}
 	}
 }

@@ -312,7 +312,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f52573a7193a74488d094c0e6d9ebf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startScene: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
+  _sceneToLoad:
+    _sceneAsset: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
+    _scenePath: Assets/Scenes/StartScene.unity
 --- !u!1 &1207110818
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,6 +436,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _persistBetweenScenes: 1
   _enableLogging: 1
+  _introductionScene:
+    _sceneAsset: {fileID: 102900000, guid: 2d35f66cb083fdc459fae9e10bea8357, type: 3}
+    _scenePath: Assets/Scenes/IntroductionScene.unity
 --- !u!1 &1749607724
 GameObject:
   m_ObjectHideFlags: 0
