@@ -12,14 +12,14 @@ public class FitImage : Image
 		Cover // Fill with cropping
 	}
 
-	[SerializeField] private FitMode fitMode = FitMode.Fill;
+	[SerializeField] private FitMode _fitMode = FitMode.Fill;
 
 	public FitMode ImageFit
 	{
-		get => fitMode;
+		get => _fitMode;
 		set
 		{
-			fitMode = value;
+			_fitMode = value;
 			SetVerticesDirty();
 		}
 	}
@@ -54,7 +54,7 @@ public class FitImage : Image
 
 		float scale = 1f;
 
-		switch (fitMode)
+		switch (_fitMode)
 		{
 			case FitMode.Fill:
 				drawWidth = rect.width;

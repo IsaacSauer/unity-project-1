@@ -1,12 +1,13 @@
+#if DEBUG
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
 
 public class OnScreenLogger : MonoBehaviour
 {
-	public TextMeshProUGUI loggerText;
-	private Queue<string> logMessages = new Queue<string>();
-	public int maxMessages = 20;
+	public TextMeshProUGUI _loggerText;
+	private Queue<string> _logMessages = new Queue<string>();
+	public int _maxMessages = 20;
 
 	void OnEnable()
 	{
@@ -20,13 +21,13 @@ public class OnScreenLogger : MonoBehaviour
 
 	void HandleLog(string logString, string stackTrace, LogType type)
 	{
-		if (logMessages.Count >= maxMessages)
-			logMessages.Dequeue();
+		if (_logMessages.Count >= _maxMessages)
+			_logMessages.Dequeue();
 
 		string formattedMessage = FormatLogMessage(logString, type);
-		logMessages.Enqueue(formattedMessage);
+		_logMessages.Enqueue(formattedMessage);
 
-		loggerText.text = string.Join("\n", logMessages.ToArray());
+		_loggerText.text = string.Join("\n", _logMessages.ToArray());
 	}
 
 	string FormatLogMessage(string message, LogType type)
@@ -45,3 +46,4 @@ public class OnScreenLogger : MonoBehaviour
 		}
 	}
 }
+#endif

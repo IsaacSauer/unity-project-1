@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
 using System.Linq;
@@ -87,3 +88,4 @@ public class SceneReferenceDrawer : PropertyDrawer
 #endif
 	}
 }
+#endif

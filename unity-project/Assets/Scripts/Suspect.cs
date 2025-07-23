@@ -11,23 +11,25 @@ namespace Game
 
 		[SerializeField] private Typewriter _typewriter;
 		[SerializeField, TextArea] private string _storyText;
-		[SerializeField] private Button _startButton;
-		[SerializeField] private TextMeshProUGUI _startButtonText;
+		[SerializeField] private Button _playButton;
+		[SerializeField] private TextMeshProUGUI _playButtonText;
 		[SerializeField] private Button _closeButton;
 
 		private void Awake()
 		{
-			_startButton.onClick.AddListener(StartSuspect);
+			_playButton.onClick.AddListener(StartSuspect);
 			_closeButton.onClick.AddListener(Hide);
 		}
 
 		private void StartSuspect()
 		{
 			_closeButton.gameObject.SetActive(false);
+			_playButton.gameObject.SetActive(false);
 			_typewriter.PlayText(_storyText, () =>
 			{
 				_closeButton.gameObject.SetActive(true);
-				_startButtonText.text = "Replay";
+				_playButton.gameObject.SetActive(true);
+				_playButtonText.text = "Replay";
 			});
 		}
 

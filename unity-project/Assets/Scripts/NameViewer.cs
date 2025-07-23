@@ -1,3 +1,4 @@
+#if DEBUG
 using TMPro;
 using UnityEngine;
 
@@ -13,3 +14,4 @@ namespace Game
 		}
 	}
 }
+#endif

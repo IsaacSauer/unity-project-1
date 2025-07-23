@@ -306,11 +306,11 @@ RectTransform:
   - {fileID: 228020967905589087}
   m_Father: {fileID: 8198543877776168152}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 147}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -21}
   m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &8808200771050417908
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -429,7 +429,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 15, y: -12}
+  m_AnchoredPosition: {x: 21, y: -21}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &3161506433188320314
@@ -525,7 +525,7 @@ GameObject:
   - component: {fileID: 8198543877776168152}
   - component: {fileID: 2133804849325649169}
   m_Layer: 5
-  m_Name: Suspect1
+  m_Name: Suspect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -568,6 +568,6 @@ MonoBehaviour:
   _storyText: 'This is the first suspect;
 
     This is test text'
-  _startButton: {fileID: 5301548220266629708}
-  _startButtonText: {fileID: 9050837157942487058}
+  _playButton: {fileID: 5301548220266629708}
+  _playButtonText: {fileID: 9050837157942487058}
   _closeButton: {fileID: 7269130964681773115}

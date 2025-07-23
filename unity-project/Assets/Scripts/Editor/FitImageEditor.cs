@@ -6,12 +6,12 @@ using UnityEngine;
 [CustomEditor(typeof(FitImage))]
 public class FitImageEditor : ImageEditor
 {
-	SerializedProperty fitMode;
+	private SerializedProperty _fitMode;
 
 	protected override void OnEnable()
 	{
 		base.OnEnable();
-		fitMode = serializedObject.FindProperty("fitMode");
+		_fitMode = serializedObject.FindProperty("_fitMode");
 	}
 
 	public override void OnInspectorGUI()
@@ -20,7 +20,7 @@ public class FitImageEditor : ImageEditor
 		serializedObject.Update();
 
 		EditorGUILayout.Space();
-		EditorGUILayout.PropertyField(fitMode, new GUIContent("Fit Mode"));
+		EditorGUILayout.PropertyField(_fitMode, new GUIContent("Fit Mode"));
 
 		serializedObject.ApplyModifiedProperties();
 	}
