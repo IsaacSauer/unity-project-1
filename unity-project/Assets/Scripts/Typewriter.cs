@@ -8,28 +8,26 @@ namespace Game
 {
 	public class Typewriter : MonoBehaviour
 	{
-		#region Events
-
-		public event Action OnEnd;
-
-		#endregion
-
 		[SerializeField] private TMP_Text _textComponent;
 		[SerializeField] private float _typingSpeed = 0.05f;
 		[SerializeField] private float _delayBetweenSentences = 1.5f;
 		[SerializeField] private Button _continueButton;
 		[SerializeField] private AudioSource _typingSound; // Audio source for character sound
 		[SerializeField] private AudioClip[] _typingClips;
-		[TextArea] [SerializeField] private string _fullText;
+		[TextArea] [SerializeField] private string _startText;
 
 		private string[] _sentences;
 		private int _currentSentenceIndex = 0;
 		private bool _isTyping = false;
 		private bool _waitForContinue = false;
+		private Action _onEnd;
 
-		public void InitializeText(string text)
+		public void PlayText(string text, Action onEnd)
 		{
-			_sentences = text.Split(new[] { '.', '!', '?' }, System.StringSplitOptions.RemoveEmptyEntries);
+			_onEnd = onEnd;
+			_currentSentenceIndex = 0;
+
+			_sentences = text.Split(new[] { ';' }, System.StringSplitOptions.RemoveEmptyEntries);
 			StartCoroutine(TypeSentence(_sentences[_currentSentenceIndex].Trim()));
 		}
 
@@ -41,9 +39,9 @@ namespace Game
 				_continueButton.onClick.AddListener(ContinueToNextSentence);
 			}
 
-			if (string.IsNullOrEmpty(_fullText) == false)
+			if (string.IsNullOrEmpty(_startText) == false)
 			{
-				InitializeText(_fullText);
+				PlayText(_startText, null);
 			}
 		}
 
@@ -97,8 +95,17 @@ namespace Game
 			else
 			{
 				Debug.Log("All sentences completed.");
-				OnEnd?.Invoke();
+				_onEnd?.Invoke();
+				_onEnd = null;
 			}
+		}
+
+		public void Stop()
+		{
+			_onEnd = null;
+			StopAllCoroutines();
+			_textComponent.text = "";
+			_currentSentenceIndex = 0;
 		}
 	}
 }
